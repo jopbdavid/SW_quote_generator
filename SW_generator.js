@@ -48,7 +48,9 @@ const displayQuote = () => {
     quote = quotes[index][key][secondIndex - 1];
   }
 
-  document.querySelector("#quote").innerHTML = `${quote} - "${key}"`;
+  document.querySelector(
+    "#quote"
+  ).innerHTML = `<q>${quote} - <em><b>${key}</b></em></q>`;
 
   prevQuote = quote;
   console.log(secondIndex);
