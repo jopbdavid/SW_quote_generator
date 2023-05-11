@@ -1,0 +1,13 @@
+{
+  "name": "sw_quote_generator",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "SW_generator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

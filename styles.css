@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap");
+
+* {
+  font-size: 16px;
+}
+
+body {
+  background-image: url(stars.png);
+  background-size: cover;
+  font-family: "Jura", sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.logo {
+  width: 30%;
+  max-width: 800px;
+  margin-top: 10%;
+}
+
+/* .generate {
+  font-family: "Jura", sans-serif;
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  border-radius: 10%;
+  padding: 1% 1%;
+} */
+
+.generate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 0px;
+  width: 200px;
+  height: 40px;
+  position: relative;
+  transition: 0.3s;
+  background-color: black;
+  font-family: "Jura", sans-serif;
+  text-transform: capitalize;
+}
+
+.generate::before,
+.generate::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 1px solid white;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.generate::before {
+  top: -2px;
+  left: -2px;
+}
+
+.generate::after {
+  top: 2px;
+  left: 2px;
+}
+
+.generate:hover::before,
+.generate:hover::after {
+  top: 0;
+  left: 0;
+}
