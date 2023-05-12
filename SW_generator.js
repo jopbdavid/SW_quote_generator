@@ -6,6 +6,8 @@ const quotes = [
       "No. I am your father.",
       "I find your lack of faith disturbing",
       "You have failed me for the last time.",
+      "I am altering the deal. Pray I don’t alter it any further.",
+      ,
     ],
   },
   {
@@ -31,17 +33,55 @@ const quotes = [
       "Fear is the path to the dark side.",
     ],
   },
+  {
+    "Princess Leia": [
+      "Help me Obi-Wan Kenobi, you’re my only hope.",
+      "Aren’t you a little short for a stormtrooper?",
+      "I’d just as soon kiss a Wookiee.",
+    ],
+  },
+  {
+    "Emperor Palpatine": [
+      "Did You Ever Hear The Tragedy Of Darth Plagueis The Wise?",
+      "So be it... Jedi.",
+      "There is a great disturbance in the Force.",
+      "The Dark Side Of The Force Is A Pathway To Many Abilities Some Consider To Be Unnatural.",
+      "Now Young Skywalker, You Will Die.",
+      "Execute Order Sixty-Six!",
+      "Power! Unlimited power!",
+    ],
+  },
+];
+
+const photos = [
+  "darth-vader-resized.jpg",
+  "obi-wan-kenobi.jpg",
+  "HanSolo.jpg",
+  "yoda.jpg",
+  "Leia.jpg",
+  "Palpatine.jpg",
 ];
 
 var button = document.querySelector(".generate");
+var imageEl = document.createElement("img");
+imageEl.setAttribute("id", "image");
+var quoteEl = document.createElement("p");
+quoteEl.setAttribute("id", "quote");
+var box = document.querySelector("#box");
+
+let prevQuote;
 
 const displayQuote = () => {
+  box.appendChild(quoteEl);
+  box.appendChild(imageEl);
+
   let index = Math.floor(Math.random() * quotes.length);
   let key = Object.keys(quotes[index]);
   let keyArray = quotes[index][key];
   let secondIndex = Math.floor(Math.random() * keyArray.length);
-  let prevQuote;
   let quote = quotes[index][key][secondIndex];
+  img = photos[index];
+
   if (quote === prevQuote && secondIndex + 1 < keyArray.length) {
     quote = quotes[index][key][secondIndex + 1];
   } else if (quote === prevQuote && secondIndex + 1 === keyArray.length) {
@@ -52,8 +92,9 @@ const displayQuote = () => {
     "#quote"
   ).innerHTML = `<q>${quote} - <em><b>${key}</b></em></q>`;
 
+  document.querySelector("#image").src = `${img}`;
+
   prevQuote = quote;
-  console.log(secondIndex);
 };
 
 button.addEventListener("click", displayQuote);
